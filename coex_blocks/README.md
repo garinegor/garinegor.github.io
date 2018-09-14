@@ -1,1 +1,0 @@
-# garinegor.github.io

@@ -97,7 +97,8 @@ $(document).ready(function () {
                     }
                     else {
                         let command = value.textContent.replace('✖', '');
-                        blocks[command] = "";
+                        blocks.push({command: ""});
+
                     }
                 });
                 let json = JSON.stringify(blocks);
