@@ -46,19 +46,21 @@ var action_list = Sortable.create(field, {
         }
         //что делать, если вынесли перемещение
         else if (blockContent == "Перемещение"){
-            Ply.dialog("prompt", {
-                title: "Перемещение",
-                form: { x: "X", y:"Y", z:"Z" }
-            })
-                .done(function (ui) {
-                    var coordinates = ui.data;
-                    console.log(coordinates);
-                    evt.item.innerHTML += '<div class="additional_information">x: ' + coordinates.x + 'м y: ' + coordinates.y + 'м z: ' + coordinates.z + 'м' + '</div><i class=\"js-remove\">✖</i>';
-                })
-                .fail(function (ui) {
-                    console.log("fail");
-                    evt.item.parentNode.removeChild(evt.item);
-                });
+            evt.item.innerHTML += '<div class="additional_information">x: <input> м y: <input> м z: <input> м';
+
+            // Ply.dialog("prompt", {
+            //     title: "Перемещение",
+            //     form: { x: "X", y:"Y", z:"Z" }
+            // })
+            //     .done(function (ui) {
+            //         var coordinates = ui.data;
+            //         console.log(coordinates);
+            //         evt.item.innerHTML += '<div class="additional_information">x: ' + coordinates.x + 'м y: ' + coordinates.y + 'м z: ' + coordinates.z + 'м' + '</div><i class=\"js-remove\">✖</i>';
+            //     })
+            //     .fail(function (ui) {
+            //         console.log("fail");
+            //         evt.item.parentNode.removeChild(evt.item);
+            //     });
             //    тут добавление координат в блок
         }
         // что делать, если вынесли задержку
