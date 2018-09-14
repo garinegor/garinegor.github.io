@@ -92,13 +92,14 @@ $(document).ready(function () {
                     let info = value.getElementsByClassName("additional_information");
                     if (info.length !== 0){
                         info = info[0].innerText;
-                        let command = value.childNodes[0].nodeValue;
-                        blocks.push({command: info});
+                        let block = {};
+                        block[value.childNodes[0].nodeValue] = info;
+                        blocks.push(block);
                     }
                     else {
-                        let command = value.textContent.replace('✖', '');
-                        blocks.push({command: ""});
-
+                        let block = {};
+                        block[value.childNodes[0].nodeValue] = "";
+                        blocks.push(block);
                     }
                 });
                 let json = JSON.stringify(blocks);
